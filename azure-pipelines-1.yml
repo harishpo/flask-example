@@ -14,7 +14,7 @@ variables:
   imageRepository: 'harishpoflaskexample'
   containerRegistry: 'pydockerimg.azurecr.io'
   dockerfilePath: '$(Build.SourcesDirectory)/Dockerfile'
-  tag: '$(Date:MMddyy)'
+  tag: '$(Date:yyyyMMdd)_$(Rev:.r)'
   
   # Agent VM image name
   vmImageName: 'ubuntu-latest'
@@ -35,5 +35,4 @@ stages:
         repository: $(imageRepository)
         dockerfile: $(dockerfilePath)
         containerRegistry: $(dockerRegistryServiceConnection)
-        tags: |
-          $(tag)
+        tags: $(tag)
