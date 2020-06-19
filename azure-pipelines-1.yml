@@ -14,7 +14,7 @@ variables:
   imageRepository: 'harishpoflaskexample'
   containerRegistry: 'pydockerimg.azurecr.io'
   dockerfilePath: '$(Build.SourcesDirectory)/Dockerfile'
-  tag: '$(Build.BuildID)_$(Date:yyyyMMdd).$(Rev:r)'
+  tag: '$(Build.BuildID)'
   
   # Agent VM image name
   vmImageName: 'ubuntu-latest'
